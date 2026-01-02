@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ • lethal.vip</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <span>HELP / FAQ</span>
+    </div>
+
+    <div class="container navWrap">
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand__dot"></span>
+          <span class="brand__name">lethal.vip</span>
+        </div>
+
+        <div class="tabs">
+          <a class="tabLink" href="../index.html#products">Products</a>
+          <a class="tabLink" href="../index.html#reviews">Reviews</a>
+          <a class="tabLink" href="../status/">Status</a>
+          <a class="tabLink active" href="./">FAQ</a>
+        </div>
+
+        <a class="iconBtn" href="../index.html" aria-label="home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M10 20h4M4 11l8-7 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="sectionHead">
+        <div>
+          <p class="kicker">Support</p>
+          <h2>FAQ</h2>
+        </div>
+      </div>
+
+      <div class="faqWrap">
+        <div class="faqItem">
+          <button class="faqQ" type="button">How do I purchase?</button>
+          <div class="faqA">Choose a product, checkout, then follow the delivery/setup instructions.</div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" type="button">How fast is delivery?</button>
+          <div class="faqA">Most deliveries are instant. If manual delivery is required, it will be stated on the product.</div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" type="button">Do you offer support?</button>
+          <div class="faqA">Yes — support is available 24/7 through our community channels.</div>
+        </div>
+
+        <div class="faqItem">
+          <button class="faqQ" type="button">Refunds?</button>
+          <div class="faqA">Refund policy depends on the product type and delivery status. Contact support for details.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footerInner">
+      <div class="footerBrand">lethal.vip</div>
+      <div class="footerLinks">
+        <a class="footerBtn" href="../status/">Status</a>
+        <a class="footerBtn" href="../faq/">FAQ</a>
+      </div>
+      <div class="footerCopy">© <span id="year"></span> lethal.vip. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // simple accordion
+    document.querySelectorAll(".faqItem").forEach((item) => {
+      const btn = item.querySelector(".faqQ");
+      btn.addEventListener("click", () => item.classList.toggle("open"));
+    });
+  </script>
+
+  <style>
+    .faqWrap{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:14px;
+    }
+    .faqItem{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      backdrop-filter: blur(14px);
+      overflow:hidden;
+    }
+    .faqQ{
+      width:100%;
+      text-align:left;
+      padding:14px 16px;
+      background: transparent;
+      border:0;
+      color: rgba(233,238,252,.92);
+      font-weight:900;
+      letter-spacing:.04em;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .faqQ::after{
+      content:"+";
+      color: rgba(233,238,252,.55);
+      font-weight:900;
+    }
+    .faqItem.open .faqQ::after{ content:"–"; }
+
+    .faqA{
+      padding: 0 16px 14px;
+      color: rgba(233,238,252,.70);
+      font-size: 13px;
+      line-height: 1.6;
+      display:none;
+    }
+    .faqItem.open .faqA{ display:block; }
+  </style>
+</body>
+</html>

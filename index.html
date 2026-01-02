@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dark Glass Landing</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://sellauth.com/assets/js/sellauth-embed-2.js"></script>
+
+    
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <span>NEW RELEASE / PC OPTIMIZER!</span>
+    </div>
+
+    <div class="container navWrap">
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand__dot"></span>
+          <span class="brand__name">LETHAL.VIP</span>
+        </div>
+
+        <!-- tabs pushed right -->
+<div class="tabs">
+  <a class="tabLink active" href="index.html#products">Products</a>
+  <a class="tabLink" href="index.html#reviews">Reviews</a>
+  <a class="tabLink" href="status/index.html">Status</a>
+  <a class="tabLink" href="faq/index.html">FAQ</a>
+</div>
+
+
+        <button class="iconBtn" aria-label="menu">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M7 8h10M7 12h6M7 16h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroGrid">
+        <div class="heroCard">
+          <h1 class="heroTitle">LETHAL.VIP</h1>
+          <p class="heroSub">
+            Premium software, accounts, and support — built for players who want
+            performance, reliability, and fast delivery.
+          </p>
+
+          <div class="heroBadgeRow">
+            <span class="badge"><span class="badge__red"></span> FAST DELIVERY</span>
+            <span class="badge"><span class="badge__red"></span> 24/7 SUPPORT</span>
+            <span class="badge"><span class="badge__red"></span> SECURE CHECKOUT</span>
+          </div>
+        </div>
+
+        <!-- floating image (no box) -->
+        <div class="heroFloat">
+          <img class="heroFloat__img" src="assets/hero-main.png" alt="Main hero artwork">
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section">
+      <div class="sectionHead">
+        <div>
+          <p class="kicker">Select a product</p>
+          <h2>Products</h2>
+        </div>
+
+        <div class="filters">
+          <button class="pill active" data-filter="all">All Products</button>
+          <button class="pill" data-filter="rust">Rust</button>
+          <button class="pill" data-filter="fivem">FiveM</button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="productsRow" id="productGrid">
+        <!-- JS injects productCard markup here -->
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section reviews">
+      <div class="reviewsHead">
+        <h2 class="reviewsTitle">Trusted by Players</h2>
+        <div class="reviewsSub">Based on verified reviews</div>
+
+        <div class="stats">
+          <div class="stat"><div class="stat__value">500+</div><div class="stat__label">Products sold</div></div>
+          <div class="stat"><div class="stat__value">100+</div><div class="stat__label">Customers</div></div>
+          <div class="stat"><div class="stat__value">4.89</div><div class="stat__label">Avg rating</div></div>
+        </div>
+      </div>
+
+      <div class="reviewsGrid" id="reviewsGrid"></div>
+    </section>
+
+  <footer class="footer">
+    <div class="container footerInner">
+      <div class="footerBrand">LETHAL.VIP</div>
+      <div class="footerLinks">
+<div class="footerLinks">
+  <a class="footerBtn" href="#">Terms of Service</a>
+
+  <a class="footerBtn footerBtn--discord" href="https://discord.gg/lethalvip" target="_blank" rel="noopener noreferrer">
+    <span class="footerIcon" aria-hidden="true">◌</span>
+    Discord
+  </a>
+</div>
+      </div>
+      <div class="footerCopy">© <span id="year"></span> lethal.vip All rights reserved.</div>
+    </div>
+  </footer>
+
+
+  <!-- Product Modal -->
+<div class="pModal" id="pModal" aria-hidden="true">
+  <div class="pModal__backdrop" data-close="1"></div>
+
+  <div class="pModal__panel" role="dialog" aria-modal="true">
+    <button class="pModal__close" id="pModalClose" aria-label="Close">×</button>
+
+    <div class="pModal__header">
+      <div class="pModal__titleRow">
+        <h3 class="pModal__title" id="pModalTitle">Product</h3>
+      </div>
+
+      <div class="pModal__chips" id="pModalChips"></div>
+    </div>
+
+    <div class="pModal__divider"></div>
+
+    <div class="pModal__content">
+      <div class="pModal__kicker">SELECT OPTION</div>
+      <div class="pModal__list" id="pModalList"></div>
+    </div>
+  </div>
+    <script src="js/app.js"></script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Status • lethal.vip</title>
+
+  <!-- IMPORTANT: paths go up one level -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <span>SYSTEM STATUS</span>
+    </div>
+
+    <div class="container navWrap">
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand__dot"></span>
+          <span class="brand__name">lethal.vip</span>
+        </div>
+
+        <div class="tabs">
+          <a class="tabLink" href="../index.html#products">Products</a>
+          <a class="tabLink" href="../index.html#reviews">Reviews</a>
+          <a class="tabLink active" href="./">Status</a>
+          <a class="tabLink" href="../faq/index.html">FAQ</a>
+        </div>
+
+        <a class="iconBtn" href="../index.html" aria-label="home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M10 20h4M4 11l8-7 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="sectionHead">
+        <div>
+          <p class="kicker">System health</p>
+          <h2>Status</h2>
+        </div>
+      </div>
+
+      <div class="statusGrid">
+        <div class="statusCard">
+          <div class="statusTop">
+            <div class="statusName">Rust</div>
+            <div class="statusPill ok"><span></span> Operational</div>
+          </div>
+          <div class="statusMeta">Last updated: just now</div>
+          <div class="statusNote">Everything running normally.</div>
+        </div>
+
+        <div class="statusCard">
+          <div class="statusTop">
+            <div class="statusName">FiveM</div>
+            <div class="statusPill warn"><span></span> Degraded</div>
+          </div>
+          <div class="statusMeta">Last updated: 10m ago</div>
+          <div class="statusNote">Some users may experience delays.</div>
+        </div>
+
+        <div class="statusCard">
+          <div class="statusTop">
+            <div class="statusName">Accounts</div>
+            <div class="statusPill ok"><span></span> Operational</div>
+          </div>
+          <div class="statusMeta">Last updated: 1h ago</div>
+          <div class="statusNote">Stock and delivery are normal.</div>
+        </div>
+      </div>
+
+      <div class="statusTimeline">
+        <div class="glassBlock">
+          <div class="timelineTitle">Recent updates</div>
+
+          <div class="timelineItem">
+            <div class="timelineDot ok"></div>
+            <div>
+              <div class="timelineWhen">Today • 12:10</div>
+              <div class="timelineText">All systems operational.</div>
+            </div>
+          </div>
+
+          <div class="timelineItem">
+            <div class="timelineDot warn"></div>
+            <div>
+              <div class="timelineWhen">Today • 11:40</div>
+              <div class="timelineText">FiveM degraded performance detected, working on a fix.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footerInner">
+      <div class="footerBrand">lethal.vip</div>
+      <div class="footerLinks">
+        <a class="footerBtn" href="../status/">Status</a>
+        <a class="footerBtn" href="../faq/">FAQ</a>
+      </div>
+      <div class="footerCopy">© <span id="year"></span> lethal.vip. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- page-specific styles -->
+  <style>
+    .statusGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .statusCard{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 22px;
+      padding: 16px;
+      backdrop-filter: blur(14px);
+    }
+    .statusTop{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+    .statusName{font-weight:900; letter-spacing:.04em;}
+    .statusMeta{margin-top:8px; color:rgba(233,238,252,.55); font-size:12px;}
+    .statusNote{margin-top:10px; color:rgba(233,238,252,.78); font-size:13px; line-height:1.45;}
+    .statusPill{
+      display:flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.25);
+      color:rgba(233,238,252,.86);
+      white-space:nowrap;
+    }
+    .statusPill span{width:9px; height:9px; border-radius:3px; display:inline-block;}
+    .statusPill.ok span{background:rgba(80,255,160,.75); box-shadow:0 0 18px rgba(80,255,160,.25);}
+    .statusPill.warn span{background:rgba(255,200,60,.85); box-shadow:0 0 18px rgba(255,200,60,.25);}
+
+    .statusTimeline{margin-top:16px;}
+    .timelineTitle{font-weight:900; letter-spacing:.04em; margin-bottom:12px;}
+    .timelineItem{display:flex; gap:12px; padding:12px 0; border-top:1px solid rgba(255,255,255,.06);}
+    .timelineItem:first-of-type{border-top:0;}
+    .timelineDot{width:10px; height:10px; border-radius:3px; margin-top:4px;}
+    .timelineDot.ok{background:rgba(80,255,160,.75);}
+    .timelineDot.warn{background:rgba(255,200,60,.85);}
+    .timelineWhen{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:rgba(233,238,252,.50);}
+    .timelineText{margin-top:6px; color:rgba(233,238,252,.78); font-size:13px;}
+
+    @media (max-width: 980px){
+      .statusGrid{grid-template-columns:1fr;}
+    }
+  </style>
+</body>
+</html>
